@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreditCard page</title>
+    <style>
+        section{
+            background-color: #00b3ff;
+            color: azure;
+        }
+        body{
+            margin: 10px;
+            padding: 0;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        form{
+            width: 525px;
+            padding: 30px;
+        }
+        fieldset{
+            padding: 20px;
+        }
+        #inputtxt{
+            width:100%;
+        }
+        footer{
+            text-align: center;
+            color: grey;
+            background-color: rgb(155, 194, 196);
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset><legend>Payment</legend>
+
+        <section> This is a secure 128-bit SSL Encrypted payment. You're safe.</section><br>
+
+        <label class="container">CreditCard
+            <input type="radio" name="" id=""><img src="OIP.jpg" height="20px" width="50px">
+        </label>
+        <label class="container">PayPal
+            <input type="radio" name="" id=""><img src="PayPal_horizontally_Logo_2014.png" height="20px" width="50px">
+        </label><br><br>
+
+        <label>Card number (16 digits on front of the card)</label><br>
+        <input type="text" id="inputtxt" name="">
+        <br><br>
+
+        <div><span>
+        <label>Expiration Date</label>
+        <select name="" id="">
+            <option>Jan</option>
+            <option>Feb</option>
+            <option>Mar</option>
+            <option>Apr</option>
+            <option>May</option>
+            <option>Jun</option>
+            <option>Jul</option>
+            <option>Aug</option>
+            <option>Sept</option>
+            <option>Oct</option>
+            <option>Nov</option>
+            <option>Dec</option>
+        </select> /
+        <select name="" id="" aria-placeholder="Year">
+            <option>2023</option>
+            <option>2024</option>
+            <option>2025</option>
+            <option>2026</option>
+            <option>2027</option>
+            <option>2028</option>
+            <option>2029</option>
+            <option>2030</option>
+            <option>2031</option>
+            </select>
+        </div><br>
+
+        <div><label>CVV</label>
+        <br>
+        <input type="password" name="" id=""><br>
+        </div><br>
+        Full Name on card<br>
+        <input type="text" name="" id=""><br><br>
+        <input type="submit" name="" id="" value="Complete Transaction"></span><br><br>
+<footer>You will be charged $29.00 per month.</footer>
+    </fieldset></form>
+</body>
+</html>
