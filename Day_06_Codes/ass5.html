@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitty</title>
+    <style>
+        @keyframes CatAnime 
+         {
+            from {left:0%} 
+            to{left:80%}      
+         }
+         @keyframes CatAnime2
+         {
+            from {left:0%} 
+            to{left:80%}      
+         }
+         #img
+         {
+            padding: 20px;
+            animation-name: CatAnime;
+            animation-duration: 6s;
+            animation-direction: alternate-reverse;
+            animation-iteration-count: infinite;
+            position: relative;
+         }
+         #img2
+         {
+            padding: 20px;
+            animation-name: CatAnime2;
+            animation-duration: 6s;
+            animation-delay:2s;
+            animation-direction:alternate;
+            animation-iteration-count: infinite;
+            position: relative;
+         }
+    </style>
+</head>
+<body>
+    <h1>Presenting you, The Sliding Cat &hearts;</h1>
+    <hr>
+    <img id= "img" src="cat_PNG131.png" height="15%" width="20%"><br>
+    <img id="img2" src="https://media.tenor.com/xfDhCkJ9SQQAAAAd/bababa.gif" height="17%" width="17%">
+</body>
+</html>
