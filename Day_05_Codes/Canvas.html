@@ -1,0 +1,30 @@
+
+<html  >
+    <head> </head>
+    <body>
+    <h3> Canvas </h3>
+    <hr/>    
+        <input type="button"  onclick="fn_Graphics()"  value="Graphics" />
+        <br/> <br/>      
+        <canvas  id="canv1"  style="border:2px  solid  rgb(79, 0, 128)"  height="280"  width="330">
+        </canvas>
+        <script>
+            function fn_Graphics()
+            {
+                var canvasObj =  document.getElementById("canv1");
+                var  ctx  =  canvasObj.getContext("2d");
+              ctx.fillStyle = "lightblue";
+               let  x = 20, y = 300,  h = 220, w=25;
+              var ar = [220, 170, 235, 100, 150, 200, 220];
+               for(var i = 0;  i <= 6;  i++)
+               {
+                     ctx.fillRect(x,ar[i],w,h);
+                     x = x +  40;
+                     y=300-h;
+               }
+            }
+        </script>
+    </body>
+</html>
+
+ 
