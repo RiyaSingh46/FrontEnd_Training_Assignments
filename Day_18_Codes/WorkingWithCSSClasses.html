@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Classes</title>
+    <style>
+        .bold
+        {
+            font-weight: bolder;
+        }
+        .underline
+        {
+            text-decoration: underline;
+        }
+        .italics
+        {
+            font-style: italic;
+        }
+        .c1
+        {
+            background-color: skyblue;
+        }
+        .c2
+        {
+            background-color: skyblue;
+        }
+        .c3
+        {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: skyblue;"> Applying Css Class</h1>
+    <br><hr><br>
+    <button id="b1" value="bold">B</button>
+    <button id="b2" value="underline">U</button>
+    <button id="b3" value="italics">I</button>
+    <p style="border: 2px solid skyblue; padding: 10px;">
+        This is an Example.
+        This is an Example.
+        This is an Example.
+        This is an Example.
+        This is an Example.
+        This is an Example.
+        This is an Example.
+        This is an Example.
+        This is an Example.
+        This is an Example.
+        This is an Example.
+        This is an Example.
+        This is an Example.
+        This is an Example.
+        This is an Example.
+        This is an Example.
+        This is an Example.
+        This is an Example.
+        This is an Example.
+        This is an Example.
+        This is an Example.
+        This is an Example.
+        This is an Example.
+    </p>
+    <script  src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        $(document).ready(function()
+        {
+            $("#b1").click(function(){
+
+                //for applying color to button
+                $("#b1").toggleClass("c1");
+                $("p").toggleClass("bold");  
+          });
+        });
+
+
+        $(document).ready(function()
+        {
+            $("#b2").click(function(){
+                //for applying color to button
+                $("#b2").toggleClass("c2");
+                $("p").toggleClass("underline");  
+        });
+        });
+
+
+        $(document).ready(function()
+        {
+            $("#b3").click(function(){
+
+            //for applying color to button
+            $("#b3").toggleClass("c3");
+            $("p").toggleClass("italics");  
+        });
+        });
+
+    </script>
+</body>
+</html>

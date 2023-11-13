@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Csv Value</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1 style="color: lightseagreen;"> Display CSV VAlues in list format using JQuery</h1>
+    <br><hr><br>
+    <body>
+        Input String :<input type="text" id="txt" name="txt"> &nbsp; &nbsp; &nbsp;
+        <button type="button" id="btn">Get Data</button>
+        <ul id="l1">
+    
+        </ul>
+    
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+    
+                var arr = $("input").val().split(",");
+                for (let items of arr) {
+                    str = `<li> ${items.toUpperCase()} </li>`;
+    
+                    $("#l1").append(str);
+    
+    
+    
+                }
+    
+    
+            });
+    
+    
+        }
+        );
+    
+    </script>
+    
