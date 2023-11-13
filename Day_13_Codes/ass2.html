@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>employee object</title>
+    <style>
+        div {
+            border: 2px solid purple;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Employee page</h3>
+    <p></p>
+
+    <button onclick="gblData()" value="Click-1">Click</button>
+    <div id="d1"></div>
+    <p></p>
+
+    <button onclick="emptyData()" value="Click-2">Click me</button>
+    <div id="d2"></div>
+    <p></p>
+
+    <button onclick="cnstData()" value="Click-3">Click me too</button>
+    <div id="d3"></div>
+    <p></p>
+    <script>
+
+        //Global Function
+        function gblData() {
+
+            //Object Initializer
+            var e1 = { empno: 9555923992, ename: "Riya Singh", job: "Analyst", sal: 325000, deptno: 820964 };
+            var dataObj = document.getElementById("d1");
+
+            //String Setter
+            var str = `Employee no : ${e1.empno}, Name : ${e1.ename}, Job : ${e1.job}, Salary : ${e1.sal}, Deprtment : ${e1.deptno}`;
+
+            dataObj.innerHTML = str;
+        }
+
+        //Empty Function
+        function emptyData() {
+            var e2 = {};
+            e2.empno = 9555923992;
+            e2.ename = "Riya Singh";
+            e2.job = "Analyst";
+            e2.sal = 325000;
+            e2.deptno = 820964;
+
+            var dataObj = document.getElementById("d2");
+
+            var str = `Employee no : ${e2.empno}, Name : ${e2.ename}, Job : ${e2.job}, Salary : ${e2.sal}, Department : ${e2.deptno}`;
+
+            dataObj.innerHTML = str;
+        }
+
+        //Constructor Function
+        function emp() {
+            this.empno = 9555923992;
+            this.ename = "Riya Singh";
+            this.job = "Analyst";
+            this.sal = 325000;
+            this.deptno = 82096;
+        }
+
+        function cnstData() {
+            var e2 = new emp();
+            var dataObj = document.getElementById("d3");
+            var str = `Employee no : ${e2.empno}, Name : ${e2.ename}, Job : ${e2.job}, Salary : ${e2.sal}, Department : ${e2.deptno}`;
+            dataObj.innerHTML = str;
+        }
+
+
+    </script>
+</body>
+
+</html>
