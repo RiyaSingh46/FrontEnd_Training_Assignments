@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            height: 50px;
+            width: 70%;
+            border: 2px solid red;
+            border-radius: 10px;
+            font-size: medium;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            font-weight: 600;
+            color: red;
+        }
+        
+
+        fieldset{
+            width: 30%;
+            border: 2px solid red;
+            border-radius: 10px;
+            font-size: medium;
+            font-family: Arial, Helvetica, sans-serif;
+            color: red;
+            margin-left: 400px;
+        }
+        button{
+            height: 40px;
+            width: 50%;
+            background-color: red;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+            border-radius: 10px;
+            border: none;
+        }
+    </style>
+</head>
+<body align="center">
+    <h1 style="color: red; font-family: Arial, Helvetica, sans-serif;">Adv. JavaScript - ES6(Use Map collection)</h1>
+    <hr style="height: 10px; background-color: red;">
+    <form action="" id="master">
+        <fieldset>
+            <legend>Friend's Details</legend>
+            <label for="t1">Friend's Name : </label>
+            <input type="text" id="t1" name="t1">
+            <br><br>
+            <label for="t2">Contact Number : </label>
+            <input type="number" id="t2" name="t2">
+            <br><br>
+            <button type="button" id="b1" name="b1" value="Add-Friend" onclick="fun1()">Add-Friend</button>
+            <br><br>
+            <button type="button" id="b2" name="b2" value="Get Contact Number" onclick="fun2()">Get Contact Number</button>
+        </fieldset>
+    </form>
+</body>
+   <script>
+
+        var txtObj1 = document.getElementById("t1");
+        var txtObj2 = document.getElementById("t2");
+        var mapObj = new Map();
+        
+       function fun1()
+       {
+           mapObj.set(txtObj1.value,txtObj2.value);
+            
+            txtObj1.value = "";
+            txtObj2.value = "";
+
+            alert('Details are added successfully');
+            for(let k of mapObj.keys())
+            {
+            console.log("keys : " + k + ", value : " + mapObj.get(k));
+            }
+           
+        }
+        
+       
+       function fun2()
+       {
+          var friendName = txtObj1.value;
+          for(let k of mapObj.keys())
+          {
+            if(k == friendName)
+            {
+                txtObj2.value = mapObj.get(k);
+            }
+          }
+          
+       }
+   </script>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            height: 40px;
+            width: 30%;
+            background-color: red;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+            border-radius: 10px;
+            border: none;
+        }
+        #div1{
+            width: 25%;
+            box-shadow: 3px 3px 4px red;
+            border: 2px solid red;
+            margin-top: 40px;
+            padding: 10px;
+            text-align: justify;
+            border-radius: 10px;
+            color: blue;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left: 450px;
+        }
+    </style>
+</head>
+<body align="center">
+    <h1 style="color: red; font-family: Arial, Helvetica, sans-serif;">Random Number Generator</h1>
+    <hr style="height: 10px; background-color: red;">
+    <button id="b1" onclick="fun1()">Generate a Number</button>
+    <div id="div1"></div>
+</body>
+   <script>
+      
+      var divObj = document.getElementById('div1');
+      function fun1()
+      {
+         const promiseObj = new Promise((resolve, reject) => {
+            let n = Math.floor((Math.random() * 10) + 1)
+           
+            if(n%5 == 0)
+            {
+                resolve(n);
+            }
+            else
+				{
+					 reject("Promise Rejected  :  Error Message Prepared by Promise : "+n);		
+				}
+         });
+
+         promiseObj.then((response) => {
+             divObj.innerHTML = response+"<br>";
+         })
+         .catch((error) => {
+            divObj.innerHTML = error+"<br>";
+         })
+      }
+   </script>
+</html>

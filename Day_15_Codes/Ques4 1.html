@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         button{
+            height: 40px;
+            width: 20%;
+            background-color: red;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+            border-radius: 10px;
+            border: none;
+        }
+        table{
+            background-color: rgb(241, 197, 204);
+            box-shadow: 3px 3px 6px red;
+            border: 2px solid red;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 300;
+            font-size: large;
+            color: red;
+        }
+        img{
+             /* border: 2px solid red; */
+             border-radius: 50%;
+             box-shadow: 4px 4px 4px red;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="fun()">Show Data</button>
+    <br><br>
+    <div id="div1"></div>
+</body>
+    <script>
+        var tableObj = document.createElement('table');
+        tableObj.setAttribute("cellspacing","10");
+        tableObj.setAttribute("cellpadding","10");
+        tableObj.setAttribute("border","2");
+        document.body.appendChild(tableObj);
+
+        let cellObj1 = document.createElement('th');
+        let cellObj2 = document.createElement('th');
+        let cellObj3 = document.createElement('th');
+        let cellObj4 = document.createElement('th');
+        let cellObj5 = document.createElement('th');
+
+        cellObj1.innerHTML = "Id";
+        cellObj2.innerHTML = "Email";
+        cellObj3.innerHTML = "First Name";
+        cellObj4.innerHTML = "Last Name";
+        cellObj5.innerHTML = "Movie Name";
+
+        var row = tableObj.insertRow(-1);
+        row.appendChild(cellObj1);
+        row.appendChild(cellObj2);
+        row.appendChild(cellObj3);
+        row.appendChild(cellObj4);
+        row.appendChild(cellObj5);
+
+        function fun()
+        {
+            let url = "https://reqres.in/api/users";
+
+            fetch(url).then((response) => {
+                response.json().then((resData) => {
+                    displayData(resData.data); 
+                })
+            }).catch((error => {
+                tableObj.innerHTML = "";
+				tableObj.innerHTML  +=  error;
+            }))
+        }
+              
+            function displayData(arr){
+                for(let item of arr){
+                    let row = tableObj.insertRow(-1);
+
+                    let cell1 = row.insertCell(-1);
+                    let cell2 = row.insertCell(-1)
+                    let cell3 = row.insertCell(-1);
+                    let cell4 = row.insertCell(-1)
+                    let cell5 = row.insertCell(-1);
+                    
+                    let imgObj = document.createElement('img');
+                    imgObj.setAttribute("src",`${item.avatar}`);
+                    cell5.append(imgObj);
+
+                    cell1.innerHTML = item.id;
+                    cell2.innerHTML = item.email;
+                    cell3.innerHTML = item.first_name;
+                    cell4.innerHTML = item.last_name;
+                }
+            }
+        
+    </script>
+</html>
