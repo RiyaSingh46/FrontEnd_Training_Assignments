@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random image generator</h1>
+    <img  alt="" id="img1">
+    <button id="b1">Images</button>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
+    <script>
+
+            var n =0;
+            $(document).ready(function(){
+                var arr = ["chip1.jpg", "chip2.jpg", "chip3.jpg"];
+                $("#b1").click(function(){
+                    
+                 n = Math.floor((Math.random() * arr.length));
+                                  
+                 //   var clock = setInterval(displayImg,2000);
+                    
+                 displayImg();
+                })
+                
+                function displayImg()
+                {
+                    $("#img1").attr("src","images/"+ arr[n]);
+                }
+            })
+            
+
+            
+    </script>
+</body>
+</html>

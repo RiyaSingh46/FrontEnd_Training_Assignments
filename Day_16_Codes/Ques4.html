@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ques2</title>
+</head>
+<style>
+    form{
+        width: 350px;
+        border: 7px solid purple;
+        margin-top: 100px;
+        margin-left: 400px;
+        box-shadow: 4px 4px 4px purple;
+    }
+    fieldset{
+        border: none;
+    }
+    input{
+        margin: 10px;
+    }
+</style>
+<body>
+    <form action="">
+        <fieldset>
+            <label for="proName">
+                Product Name :
+            </label>
+            <input type="text" id="proName" name="proName" autofocus><br>
+            <label for="unitPrice">
+                Unit Price :
+            </label>
+            <input type="number" id="unitPrice" name="unitPrice"><br>
+            <label for="quant">
+                Quantity : </label>
+            <input type="number" id="quant" name="quant"><br>
+            <input type="button" id="total" name="total" value="Get Total" onclick="getTotal()"><br>
+            <p id="res"> </p>
+        </fieldset>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    function getTotal()
+    {
+     var txtObj1 = $("#unitPrice").val();
+     var txtObj2 = $("#quant").val();
+     var total = txtObj1*txtObj2
+     var result = $("#res");
+
+     if(txtObj2 > 30){
+        result.html("Total Amount : "+total.toFixed(2)+"<br> You get 20% discount on your total &#128526" + "<br> Amount Payable : " +(total - 0.2*total).toFixed(2)+"&#128077");
+     }
+     else if(txtObj2 > 20){
+        result.html("Total Amount : "+total.toFixed(2)+"<br> You get 20% discount on your total &#128526" + "<br> Amount Payable : " +(total - 0.15*total).toFixed(2)+"&#128077");
+     }
+     else if(txtObj2 > 10){
+        result.html("Total Amount : "+total.toFixed(2)+"<br> You get 20% discount on your total &#128526" + " <br>Amount Payable : " +(total - 0.1*total).toFixed(2)+"&#128077");
+     }
+     else{
+        result.html("Total Amount : "+total.toFixed(2)+" <br>No discount applied &#128532");
+     }
+     
+
+     
+    }
+
+
+</script>
+</body>
+
+
+</html>
