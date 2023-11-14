@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend><h3>User Login</h3></legend>
+        User Name :
+        <input type="text" id="uname" ><br><br>
+        Password :
+        <input type="password" id="pwd" ><br><br>
+        <button onclick="test()">Login</button><br><br><br>
+        <p id="p1"></p>
+    </fieldset>
+    <script>
+        function test(){
+            var unameObj = document.getElementById("uname");
+            var passObj = document.getElementById("pwd");
+            var paraObj = document.getElementById("p1");
+            paraObj.innerText = "";
+
+            if(unameObj.value=="Admin" && passObj.value=="123")
+            {
+                paraObj.innerText = "Hello There!";
+            }
+            else{
+                paraObj.innerText = "Invalid User";
+            }
+        }
+    </script>
+</body>
+</html>

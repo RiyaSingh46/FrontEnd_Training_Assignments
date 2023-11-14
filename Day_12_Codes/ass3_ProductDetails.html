@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ques2</title>
+</head>
+<style>
+    form{
+        width: 350px;
+        border: 7px solid rgb(0, 117, 128);
+        margin-top: 100px;
+        margin-left: 400px;
+    }
+    fieldset{
+        border: none;
+    }
+    input{
+        margin: 10px;
+    }
+</style>
+<body>
+    <form action="">
+        <fieldset>
+            <label for="proName">
+                Product Name :
+            </label>
+            <input type="text" id="proName" name="proName"><br>
+            <label for="unitPrice">
+                Unit Price :
+            </label>
+            <input type="number" id="unitPrice" name="unitPrice"><br>
+            <label for="quant">
+                Quantity : </label>
+            <input type="number" id="quant" name="quant"><br>
+            <input type="button" id="total" name="total" value="Get Total" onclick="getTotal()"><br>
+            <p id="res"> </p>
+        </fieldset>
+    </form>
+</body>
+
+<script>
+    function getTotal()
+    {
+     var txtObj1 = document.getElementById("unitPrice")//only textbox1
+     var txtObj2 = document.getElementById("quant")//textbox2
+     var total = txtObj1.value*txtObj2.value
+     var result = document.getElementById("res");
+     
+     if(txtObj2>10)
+     {
+        
+     }
+     result.innerHTML = "Total Amount : "+total;
+
+     
+    }
+
+
+</script>
+
+</html>
